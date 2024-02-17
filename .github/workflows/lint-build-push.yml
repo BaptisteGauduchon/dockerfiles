@@ -48,7 +48,7 @@ jobs:
         run: docker image save -o image-$IMAGE_TAG.tar $IMAGE_NAME:$IMAGE_TAG
 
       - name: Upload image artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: image-${{ env.IMAGE_TAG }}
           path: image-${{ env.IMAGE_TAG }}.tar
@@ -63,7 +63,7 @@ jobs:
         run: echo "IMAGE_TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
       - name: download image artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: image-${{ env.IMAGE_TAG }}
 
@@ -113,7 +113,7 @@ jobs:
         run: docker image save -o image-$IMAGE_TAG.tar $IMAGE_NAME:$IMAGE_TAG
 
       - name: Upload image artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: image-${{ env.IMAGE_TAG }}
           path: image-${{ env.IMAGE_TAG }}.tar
@@ -144,7 +144,7 @@ jobs:
 
     steps:
       - name: download image artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: image-${{ env.IMAGE_TAG }}
 
